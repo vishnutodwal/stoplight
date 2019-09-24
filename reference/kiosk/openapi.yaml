@@ -1,0 +1,220 @@
+openapi: 3.0.0
+info:
+  title: Kiosk
+  version: '1.0'
+  description: ''
+servers:
+  - url: 'https://devampower.amplussolar.com/be/api/'
+    description: Staging
+  - url: 'https://ampower.amplussolar.com/be/api/'
+    description: Production
+paths:
+  /generation/daily:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                Sample:
+                  value:
+                    payload:
+                      - generation_time: '2019-09-24T04:00:00+05:30'
+                        generation_value: 0
+                      - generation_time: '2019-09-24T05:00:00+05:30'
+                        generation_value: 0
+                      - generation_time: '2019-09-24T06:00:00+05:30'
+                        generation_value: 73.32666666666667
+                      - generation_time: '2019-09-24T07:00:00+05:30'
+                        generation_value: 404.65749999999997
+                      - generation_time: '2019-09-24T08:00:00+05:30'
+                        generation_value: 1091.7891666666667
+                      - generation_time: '2019-09-24T09:00:00+05:30'
+                        generation_value: 1700.5816666666665
+                      - generation_time: '2019-09-24T10:00:00+05:30'
+                        generation_value: 2480.1741666666667
+                      - generation_time: '2019-09-24T11:00:00+05:30'
+                        generation_value: 2480.1741666666667
+                    message: data fetched successfully
+                    status: true
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: plant_id_list
+          required: true
+          description: '10097'
+        - schema:
+            type: string
+          in: query
+          name: token
+          required: true
+          description: c1ae7de2d80c38f9c9b9ce870c511f3568cb209e
+  /generation:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                Sample:
+                  value:
+                    payload:
+                      - plant_id: 10097
+                        parameter: generation
+                        value: 6480079.85
+                    message: data fetched successfully
+                    status: true
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: plant_id_list
+          description: '10097'
+        - schema:
+            type: string
+          in: query
+          name: token
+          description: c1ae7de2d80c38f9c9b9ce870c511f3568cb209e
+  /info:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                Sample:
+                  value:
+                    payload:
+                      type: client
+                      client:
+                        uuid: c5e7d171-a16e-439f-b56b-04a9209382a1
+                        name: IEML
+                        logo: /media/client/c5e7d171-a16e-439f-b56b-04a9209382a1/logo/ieml-logo.jpg
+                        ceo_name: Rakesh Kumar
+                        ceo_designation: Chairman
+                        ceo_image: /media/client/c5e7d171-a16e-439f-b56b-04a9209382a1/ceo/1534751027_YV6wqk_cropped_26.png
+                        ceo_statement: Our objective is not just to provide efficient and sustainable service but also be environmentally conscious in our energy and power usage. This partnership ( With Amplus ) is part of our long-term strategy to use renewable sources to power and we are very proud that a portion of our energy will come from solar.
+                        analytics_client_token: c1ae7de2d80c38f9c9b9ce870c511f3568cb209e
+                        about_summary: IEML is India’s first state of the art project for cottage sector wherein Round ‘O’ Clock International Marketing has been conceptualized.
+                        about_box_1_value: '1,50,000'
+                        about_box_1_title: Visitors/Day
+                        about_box_2_value: '10'
+                        about_box_2_title: Total Years
+                        is_ceo: true
+                      installations:
+                        - uuid: f65c915d-d0ad-4de6-bf59-2d2fa5dd35b5
+                          name: IEML
+                          location: Greater Noida
+                          capacity: 3448
+                          analytics_plant_code: 10097
+                          images:
+                            - uuid: 63b7b94f-fb10-43a3-a2ec-83eb80dde2fe
+                              url: /media/client/c5e7d171-a16e-439f-b56b-04a9209382a1/installation/f65c915d-d0ad-4de6-bf59-2d2fa5dd35b5/i-QHMJjM5-X2.jpg
+                              created_on: '2019-07-31T10:41:21.568663'
+                              updated_on: '2019-07-31T10:41:21.568689'
+                            - uuid: f5318d2c-8cfc-4741-a678-ac153692abe2
+                              url: /media/client/c5e7d171-a16e-439f-b56b-04a9209382a1/installation/f65c915d-d0ad-4de6-bf59-2d2fa5dd35b5/2.jpg
+                              created_on: '2019-07-31T10:42:19.448952'
+                              updated_on: '2019-07-31T10:42:19.448973'
+                            - uuid: d73cbc8d-778f-489c-adbb-a91a74a64fd5
+                              url: /media/client/c5e7d171-a16e-439f-b56b-04a9209382a1/installation/f65c915d-d0ad-4de6-bf59-2d2fa5dd35b5/2_eUt0QbN.jpg
+                              created_on: '2019-07-31T10:42:19.450467'
+                              updated_on: '2019-07-31T10:42:19.450486'
+                          num_inverters: '30'
+                          num_panels: '10000'
+                          azimuth: '15'
+                          lifetime_energy: 102958814
+                          installation_date: '2018-09-29T13:14:25'
+                      token: 93c39eb9-4bf3-4216-9f00-f5677e1a7763
+                    message: logged-in successfull
+                    status: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Authorization
+          description: 55e45f6c-8ccb-4e1e-86a0-649595dd0bda
+  /logout:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                Sample:
+                  value:
+                    payload: {}
+                    message: logged-out successfull
+                    status: true
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Authorization
+          description: 55e45f6c-8ccb-4e1e-86a0-649595dd0bda
+          required: true
+  /signin:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                Sample:
+                  value:
+                    payload:
+                      token: b3646811-e0e5-4714-acc4-700ff5bd6b15
+                    message: logged-in successfull
+                    status: true
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: username
+          description: ieml
+          required: true
+        - schema:
+            type: string
+          in: query
+          name: password
+          description: ieml
+          required: true
+components:
+  schemas: {}
