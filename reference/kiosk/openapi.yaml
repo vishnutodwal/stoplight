@@ -160,9 +160,8 @@ paths:
           name: Authorization
           description: 55e45f6c-8ccb-4e1e-86a0-649595dd0bda
   /logout:
-    get:
-      summary: Your GET endpoint
-      tags: []
+    post:
+      summary: ''
       responses:
         '200':
           description: OK
@@ -185,9 +184,8 @@ paths:
           description: 55e45f6c-8ccb-4e1e-86a0-649595dd0bda
           required: true
   /signin:
-    get:
-      summary: Your GET endpoint
-      tags: []
+    post:
+      summary: ''
       responses:
         '200':
           description: OK
@@ -208,13 +206,13 @@ paths:
             type: string
           in: query
           name: username
-          description: ieml
           required: true
+          description: ieml
         - schema:
             type: string
           in: query
           name: password
-          description: ieml
           required: true
+          description: ieml
 components:
   schemas: {}
